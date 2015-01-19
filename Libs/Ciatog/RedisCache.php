@@ -13,6 +13,9 @@ class RedisCache
 	private $client;
 	private $uniqueContext;
 
+	/**
+	 * Initialises the class with a unique context so you can share a redis cache amongst multiple different applications.
+	 */
 	public function __construct($uniqueContext)
 	{
 		if (is_null($uniqueContext) || !is_string($uniqueContext)) {
@@ -46,11 +49,19 @@ class RedisCache
 		);
 	}
 
+	/**
+	 * Checks if the item with the specified keys exists in the cache
+	 */
 	public function exists($key)
     {
         return $this->client->exists($key);
     }
 
+	/**
+	 * Retrieves an item from the cache with the specified key.
+	 * If you pass a function as the second parameter this will be called if the item does not exist in the database.
+	 * The function should return the data that you could like added to the cache.
+	 */
     public function get($key, $configFunc = null)
     {
         $item = $this->client->get($key);
@@ -69,6 +80,9 @@ class RedisCache
         }
     }
 
+	/**
+	 * Adds an item to the cache with the specified key. Also allows an optional expiration (default is no expiration)
+	 */
     public function set($key, $data, $expiresInSeconds = self::NO_EXPIRATION)
     {
     	$this->client->set($key, serialize($data));
@@ -80,6 +94,9 @@ class RedisCache
     	return true;
     }
 
+	/**
+	 * Deletes the item with the specified key from the current cache context
+	 */
     public function delete($key)
     {
     	$this->client->del($key);
@@ -87,11 +104,17 @@ class RedisCache
         return true;
     }
 
+	/**
+	 * Deletes all items from the current cache context
+	 */
     public function deleteAll()
     {
         return $this->client->flushdb();
     }
 
+	/**
+	 * Returns a list of keys from the current cache context
+	 */
     public function keys()
     {
         $keys = $this->client->keys("*");

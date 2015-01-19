@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ciatog/PhpRedisCache.svg)](https://travis-ci.org/ciatog/PhpRedisCache)
-[![Coverage Status](https://coveralls.io/repos/ciatog/PhpRedisCache/badge.svg)](https://coveralls.io/r/ciatog/PhpRedisCache)
+[![Coverage Status](https://coveralls.io/repos/ciatog/PhpRedisCache/badge.svg?branch=master)](https://coveralls.io/r/ciatog/PhpRedisCache?branch=master)
 
 PHP Redis Cache
 ===============
