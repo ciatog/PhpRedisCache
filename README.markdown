@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ciatog/PhpRedisCache.svg)](https://travis-ci.org/ciatog/PhpRedisCache)
+
 PHP Redis Cache
 ===============
 
