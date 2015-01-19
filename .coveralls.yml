@@ -1,0 +1,3 @@
+src_dir: .
+coverage_clover: ./Build/Logs/Clover.xml
+json_path: ./Build/Logs/Coveralls-Upload.json
