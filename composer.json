@@ -1,8 +1,9 @@
 {
-    "name": "ciatog/PhpRedisCache",
+    "name": "ciatog/redis-cache",
     "description": "PHP Cache Wrapper for Redis",
-    "keywords": ["redis", "php", "cache"],
+    "keywords": ["redis", "cache"],
     "type": "library",
+    "homepage": "https://github.com/ciatog/PhpRedisCache",
     "license": "MIT",
     "authors": [
         {
@@ -11,6 +12,7 @@
         }
     ],
     "require": {
+        "php": ">=5.4.0",
         "predis/predis": "0.8.5"
     },
     "require-dev": {
